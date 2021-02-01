@@ -3,49 +3,13 @@ import React from 'react';
 import PokemonSprite from './PokemonSprite';
 import PokemonDescription from './PokemonDescription';
 
+import { usePokemonContext } from '../../context/Pokemon';
+
 import { Panel, Screen, PokemonName } from './styles';
 
-interface LeftPanelProps {
-  pokemon: {
-    abilities: [];
-    id: number;
-    name: string;
-    sprites: {
-      front_default: string;
-      back_default: string;
-      front_shiny: string;
-      back_shiny: string;
-    };
-    stats: [
-      {
-        base_stat: number;
-        stat: {
-          name: string;
-        };
-      },
-    ];
-  } | null;
+const LeftPanel: React.FC = () => {
+  const { pokemon, pokemonSpecies } = usePokemonContext();
 
-  pokemonSpecies: {
-    id: number;
-    flavor_text_entries: [
-      {
-        flavor_text: string;
-        language: {
-          name: string;
-        };
-      },
-    ];
-    generation: {
-      name: string;
-    };
-  } | null;
-}
-
-const LeftPanel: React.FC<LeftPanelProps> = ({
-  pokemon,
-  pokemonSpecies,
-}: LeftPanelProps) => {
   return (
     <Panel>
       {pokemon && pokemonSpecies && (

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import pokemonApi from '../services/api';
 
-interface PokemonFetch {
+export interface PokemonFetch {
   id: number;
   name: string;
   abilities: [];
@@ -23,7 +23,7 @@ interface PokemonFetch {
   ];
 }
 
-interface PokemonSpeciesFetch {
+export interface PokemonSpeciesFetch {
   id: number;
   flavor_text_entries: [
     {

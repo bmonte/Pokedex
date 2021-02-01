@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
+import { usePokemonContext } from '../../context/Pokemon';
 import LeftPanel from '../../components/LeftPanel';
 import Divider from '../../components/Divider';
 import RightPanel from '../../components/RightPanel';
 
 import { PokedexContainer } from './styles';
 
-import usePokemon from '../../hooks/usePokemon';
-
 const Pokedex: React.FC = () => {
-  const [pokemonId, setPokemonId] = useState(1);
-  const { pokemon, pokemonSpecies } = usePokemon(pokemonId);
+  const { setPokemonId } = usePokemonContext();
 
   const diminuirId = (prevId: number): number => {
     if (prevId === 1) return 1;
@@ -28,7 +26,7 @@ const Pokedex: React.FC = () => {
         <FaArrowLeft size={64} />
       </button>
       <PokedexContainer>
-        <LeftPanel pokemon={pokemon} pokemonSpecies={pokemonSpecies} />
+        <LeftPanel />
         <Divider />
         <RightPanel />
       </PokedexContainer>

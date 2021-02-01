@@ -44,6 +44,10 @@ export const SpriteButton = styled.button<ButtonProps>`
     border-color: #b8ed7c;
   }
 
+  &:active {
+    border-color: #f8ed7c;
+  }
+
   ${props =>
     props.isActive &&
     css`
