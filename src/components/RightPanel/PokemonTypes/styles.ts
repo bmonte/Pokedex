@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const TypesList = styled.div`
   display: flex;
   flex-direction: column;
-  border-left: groove #757575 3px;
   flex: 1;
+
+  border-left: groove #757575 2px;
 `;
 
 export const TypesHeader = styled.div`
@@ -12,10 +13,11 @@ export const TypesHeader = styled.div`
   letter-spacing: 4px;
   text-transform: capitalize;
 
-  display: flex;
+  display: inherit;
   justify-content: center;
   align-items: center;
   padding-bottom: 5px;
+
   background: linear-gradient(
     14deg,
     #460f0f 0,
@@ -29,24 +31,23 @@ export const TypesHeader = styled.div`
 `;
 
 export const TypesBox = styled.div`
-  display: flex;
+  display: inherit;
   flex-direction: column;
   flex: 1;
   justify-content: space-evenly;
+
   background: linear-gradient(14deg, #afafaf 50%, #ffffff 80%, #afafaf 90%);
   border-top: groove #757575 3px;
 `;
 
 export const Types = styled.div`
-  color: rgba(0, 0, 0, 0.9);
+  font-size: 1.25rem;
   text-transform: capitalize;
-  font-size: 1.25em;
   border: groove #757575 3px;
   border-radius: 10px;
-  width: 150px;
+  width: 75%;
   text-align: center;
   letter-spacing: 2px;
-  text-shadow: rgba(255, 255, 255, 0.3) -1px 1px;
   align-self: center;
   background: linear-gradient(
     15deg,
